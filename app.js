@@ -1,4 +1,4 @@
-let listaAmigos = [];
+let amigos = [];
 
 function adicionarAmigo() {
   let amigo = document.getElementById("amigo").value;
@@ -6,12 +6,24 @@ function adicionarAmigo() {
   if (amigo === "") {
     alert("Por favor, insira um nome");
   } else {
-    listaAmigos.push(amigo);
-    limparCampo();
+    amigos.push(amigo);
+    limparCampo(amigo);
   }
+  atualizarAmigos(amigos);
 }
 
-function limparCampo() {
+function limparCampo(amigo) {
   amigo = document.querySelector("input");
   amigo.value = "";
+}
+
+function atualizarAmigos(amigos) {
+  let listaAmigos = document.getElementById("listaAmigos");
+  listaAmigos.innerHTML = "";
+
+  for (let i = 0; i < amigos.length; i++) {
+    const li = document.createElement("li");
+    li.textContent = amigos[i];
+    listaAmigos.appendChild(li);
+  }
 }
