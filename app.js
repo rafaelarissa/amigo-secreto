@@ -41,3 +41,11 @@ function sortearAmigo() {
     alert("Não há nomes na lista");
   }
 }
+
+function reiniciarSorteio() {
+  let listaAmigos = document.getElementById("listaAmigos");
+  listaAmigos.innerHTML = "";
+
+  let resultado = document.getElementById("resultado");
+  resultado.innerHTML = "";
+}
