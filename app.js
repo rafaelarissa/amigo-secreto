@@ -27,3 +27,17 @@ function atualizarAmigos(amigos) {
     listaAmigos.appendChild(li);
   }
 }
+
+function sortearAmigo() {
+  if (!!amigos.length) {
+    let sorteado = Math.floor(Math.random() * amigos.length);
+
+    let resultado = document.getElementById("resultado");
+    resultado.innerHTML = amigos[sorteado];
+
+    amigos.splice(sorteado, 1);
+    atualizarAmigos(amigos);
+  } else {
+    alert("Não há nomes na lista");
+  }
+}
